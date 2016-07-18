@@ -1,0 +1,76 @@
+@charset "UTF-8";
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+	margin:0;
+	padding:0;
+	behavior:url(js/PIE.htc);
+}
+
+ul{
+	list-style:none;
+}
+
+a{
+	text-decoration:none;
+}
+
+img{
+	border:0;
+	vertical-align:middle;
+}
+
+input,button{
+	vertical-align:middle;
+	outline:none;
+	border:none;
+}
+
+textarea{
+	outline:none;
+	border:none;
+	resize:none;
+}
+
+.lf{
+	float:left;
+}
+
+.rt{
+	float:right;
+}
+
+/*清除浮动*/
+.clearfix{
+	*zoom:1;
+}
+
+/* 针对IE7 hack，触发IE7的haslayout，以清除浮动 */
+.clearfix:before,.clearfix:after{
+	display:table;
+	content:"";
+	line-height:0;
+}
+
+.clearfix:after{
+	clear:both;
+}
+
+body{
+	background:#fff;
+	color:#75797c;
+	font-size:14px;
+	font-family:"Microsoft YaHei","微软雅黑","Arial";
+}
+
+input,textarea{
+	font-size:12px;
+	font-family:"Microsoft YaHei";
+	color:#9d9d9d;
+}
+
+select,option{
+	font-family:"Microsoft YaHei";
+	color:#fff;
+	border:none;
+	outline:none;
+}
+
