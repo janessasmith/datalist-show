@@ -1,76 +1,74 @@
 @charset "UTF-8";
-	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
-	margin:0;
-	padding:0;
-	behavior:url(js/PIE.htc);
+
+blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+    behavior: url(js/PIE.htc);
 }
 
-ul{
-	list-style:none;
+ul {
+    list-style: none;
 }
 
-a{
-	text-decoration:none;
+a {
+    text-decoration: none;
 }
 
-img{
-	border:0;
-	vertical-align:middle;
+img {
+    border: 0;
+    vertical-align: middle;
 }
 
-input,button{
-	vertical-align:middle;
-	outline:none;
-	border:none;
+button, input {
+    outline: 0;
+    border: none;
+    vertical-align: middle;
 }
 
-textarea{
-	outline:none;
-	border:none;
-	resize:none;
+textarea {
+    outline: 0;
+    border: none;
+    resize: none;
 }
 
-.lf{
-	float:left;
+.lf {
+    float: left;
 }
 
-.rt{
-	float:right;
+.rt {
+    float: right;
 }
 
-/*清除浮动*/
-.clearfix{
-	*zoom:1;
+.clearfix {
+    *zoom: 1;
 }
 
-/* 针对IE7 hack，触发IE7的haslayout，以清除浮动 */
-.clearfix:before,.clearfix:after{
-	display:table;
-	content:"";
-	line-height:0;
+.clearfix:after, .clearfix:before {
+    display: table;
+    content: "";
+    line-height: 0;
 }
 
-.clearfix:after{
-	clear:both;
+.clearfix:after {
+    clear: both;
 }
 
-body{
-	background:#fff;
-	color:#75797c;
-	font-size:14px;
-	font-family:"Microsoft YaHei","微软雅黑","Arial";
+body {
+    background: #fff;
+    color: #75797c;
+    font-size: 14px;
+    font-family: Microsoft YaHei, "微软雅黑", Arial;
 }
 
-input,textarea{
-	font-size:12px;
-	font-family:"Microsoft YaHei";
-	color:#9d9d9d;
+input, textarea {
+    color: #9d9d9d;
+    font-size: 9pt;
+    font-family: Microsoft YaHei;
 }
 
-select,option{
-	font-family:"Microsoft YaHei";
-	color:#fff;
-	border:none;
-	outline:none;
+option, select {
+    outline: 0;
+    border: none;
+    color: #fff;
+    font-family: Microsoft YaHei;
 }
-
