@@ -31,60 +31,60 @@
     <script type="text/javascript">
         var timer;
         var currentTimer;
-        BeginChange(258,250,5,datas[0][0]);
+        BeginChange(258, 250, 5, datas[0][0]);
         function qiehuan(n) {
             var len = datas[n].length;
-            if(n==0) {
-                timer = timePlay(n,len);
+            if (n == 0) {
+                timer = timePlay(n, len);
                 return timer;
             }
-            else if(n==1) {
-                timer = timePlay(n,len);
+            else if (n == 1) {
+                timer = timePlay(n, len);
                 return timer;
             }
-            else if(n==2) {
-                timer = timePlay(n,len);
+            else if (n == 2) {
+                timer = timePlay(n, len);
                 return timer;
             }
-            else if(n==3) {
-                timer = timePlay(n,len);
+            else if (n == 3) {
+                timer = timePlay(n, len);
                 return timer;
             }
-            else if(n==4) {
-                timer = timePlay(n,len);
+            else if (n == 4) {
+                timer = timePlay(n, len);
                 return timer;
             }
         }
-        function timePlay(n,len) {
-            BeginChange(258,250,5,datas[n][0]);
+        function timePlay(n, len) {
+            BeginChange(258, 250, 5, datas[n][0]);
             var i = 1;
-            timer = window.setInterval(function(){
-                if(i > len-1){
+            timer = window.setInterval(function () {
+                if (i > len - 1) {
                     i = 0;
                 }
-                BeginChange(258,250,5,datas[n][i]);
+                BeginChange(258, 250, 5, datas[n][i]);
                 i++;
-            },5000);
+            }, 5000);
             // 当数据只有一屏时停止切换
-            if(datas[n].length == 1) {
+            if (datas[n].length == 1) {
                 clearInterval(timer);
             }
             return timer;
         }
-        $(function(){
+        $(function () {
             var n = 1;
             // qiehuan(0);
-            if(currentTimer!=null){
+            if (currentTimer != null) {
                 // 当切换导航时停止当前轮播
                 clearInterval(currentTimer);
             }
             currentTimer = qiehuan(0);
         });
-        $(".cb-navbar ul li").click(function(){
+        $(".cb-navbar ul li").click(function () {
             var index = $(this).index();
-            var n=index;
-            $('#b'+n+'').addClass('cb-nav-cur').siblings().removeClass('cb-nav-cur');
-            if(currentTimer!=null){
+            var n = index;
+            $('#b' + n + '').addClass('cb-nav-cur').siblings().removeClass('cb-nav-cur');
+            if (currentTimer != null) {
                 // 当切换导航时停止当前轮播
                 clearInterval(currentTimer);
             }

@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>一屏展示index</title>
+    <!--通用CSS样式引入-->
+    <link rel="stylesheet" href="css/public.css"/>
+    <!--亮点荟萃/转载情况分析 CSS样式引入-->
+    <link rel="stylesheet" href="css/style-index.css"/>
+    <!--分类热点消息 CSS样式引入-->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css"/>
+    <!--jQuery库引入-->
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <!--基于1920分辨率适应 JS引入-->
+    <!-- <script type="text/javascript" src="js/type1920.js"></script> -->
+    <!--亮点荟萃 JS引入-->
+    <script type="text/javascript" src="js/jc.js"></script>
+    <script type="text/javascript" src="js/highlights.js"></script>
+    <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--分类热点消息 JS引入及json数据-->
+    <script type="text/javascript" src="js/matrix.js"></script>
+    <script type="text/javascript" src="data/hotinfo-data.json"></script>
+</head>
+<body>
+    <div class="cb-container">
+        <!--转载情况分析-->
+        <div class="cb-zz-container">
+            <!--header-->
+            <div class="zz-head-ct">
+                <h1 class="jt-hd-sp">xxxx新媒体影响力分析平台</h1>
+            </div>
+            <!--end header-->
+            <div class="cb-zz-head"></div>
+            <!--标题-->
+            <div class="cb-title cb-po">
+                <div class="cb-title-l"></div>
+                <div class="cb-title-c">
+                    <img class="cb-title-icon" src="images/cb-title-icon01.png" width="35" height="35" alt="">
+                    <span>集团新闻被转载情况分析（月）</span>
+                </div>
+                <div class="cb-title-r"></div>
+            </div>
+            <!--文章总数 被转载次数-->
+            <div class="zz-num">
+                <div class="zz-head-wz">
+                    <span class="wz-sp">文章总数</span>
+                    <span class="wz-num">62,094</span>
+                </div>
+                <div class="zz-head-cs">
+                    <span class="wz-sp">被转载次数</span>
+                    <span class="wz-num">78,092</span>
+                </div>
+            </div>
+            <!--main-->
+            <div class="zz-main-con">
+                <!--按分类-->
+                <div class="zz-con-bk">
+                    <div class="zz-con-ct zz-fl-bac"></div>
+                    <div class="zz-ct-bk">
+                        <img src="images/cb-dp-img02.png"/>
+                    </div>
+                    <div class="zz-ct-sp">
+                        <p>
+                            <img src="images/cb-chart-icon01.png"/>
+                            <label>微信</label>
+                            <span>137650</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon02.png"/>
+                            <label>微博</label>
+                            <span>56788</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon03.png"/>
+                            <label>客户端</label>
+                            <span>46666</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon07.png"/>
+                            <label>网站</label>
+                            <span>1685</span>
+                        </p>
+                    </div>
+                    <div class="zz-con-ft">被转载数——按分类</div>
+                </div>
+                <!--按子单位-->
+                <div class="zz-con-bk">
+                    <div class="zz-con-ct zz-dw-bac"></div>
+                    <div class="zz-ct-bk">
+                        <img src="images/cb-dp-img03.png"/>
+                    </div>
+                    <div class="zz-ct-sp dw-ct-sp">
+                        <p>
+                            <img src="images/cb-chart-icon07.png"/>
+                            <label>成都日报</label>
+                            <span>13652</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon08.png"/>
+                            <label>成都商报</label>
+                            <span>55776</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon09.png"/>
+                            <label>成都晚报</label>
+                            <span>23800</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon10.png"/>
+                            <label>全搜索新闻网</label>
+                            <span>22461</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon12.png"/>
+                            <label>每日经济新闻</label>
+                            <span>36453</span>
+                        </p>
+                    </div>
+                    <div class="zz-con-ft">被转载数——按子单位</div>
+                </div>
+                <!--转载热门单位TOP3-->
+                <div class="zz-con-bk">
+                    <div class="zz-con-ct zz-fl-bac"></div>
+                    <div class="zz-ct-bk">
+                        <img src="images/cb-dp-img04.png"/>
+                    </div>
+                    <div class="zz-ct-sp ht-ct-sp">
+                        <p>
+                            <img src="images/cb-chart-icon04.png"/>
+                            <label>腾讯</label>
+                            <span>1231</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon05.png"/>
+                            <label>网易</label>
+                            <span>987</span>
+                        </p>
+
+                        <p>
+                            <img src="images/cb-chart-icon06.png"/>
+                            <label>新浪</label>
+                            <span>769</span>
+                        </p>
+                    </div>
+                    <div class="zz-con-ft">转载热门单位TOP3</div>
+                </div>
+            </div>
+            <!--end main-->
+        </div>
+        <!--分类热点消息-->
+        <div class="cb-hot-container">
+            <!--<header class="cb-header"></header>-->
+            <!--标题-->
+            <div class="cb-title cb-hot-po">
+                <div class="cb-title-l"></div>
+                <div class="cb-title-c">
+                    <img class="cb-title-icon" src="images/cb-title-icon03.png" width="35" height="35" alt="">
+                    <span>分类热点信息</span>
+                </div>
+                <div class="cb-title-r"></div>
+            </div>
+            <nav class="cb-navbar">
+                <ul>
+                    <li id="b0" class="cb-nav-cur"><a href="javascript:;">中心工作</a></li>
+                    <li id="b1"><a href="javascript:;">本地</a></li>
+                    <li id="b2"><a href="javascript:;">区域</a></li>
+                    <li id="b3"><a href="javascript:;">最新</a></li>
+                    <li id="b4"><a href="javascript:;">国内国际</a></li>
+                </ul>
+            </nav>
+            <div class="cb-main-con" id="cb-main-con">
+            </div>
+        </div>
+        <script type="text/javascript">
+            var timer;
+            var currentTimer;
+            BeginChange(258, 250, 5, datas[0][0]);
+            function qiehuan(n) {
+                var len = datas[n].length;
+                if (n == 0) {
+                    timer = timePlay(n, len);
+                    return timer;
+                }
+                else if (n == 1) {
+                    timer = timePlay(n, len);
+                    return timer;
+                }
+                else if (n == 2) {
+                    timer = timePlay(n, len);
+                    return timer;
+                }
+                else if (n == 3) {
+                    timer = timePlay(n, len);
+                    return timer;
+                }
+                else if (n == 4) {
+                    timer = timePlay(n, len);
+                    return timer;
+                }
+            }
+            function timePlay(n, len) {
+                BeginChange(258, 250, 5, datas[n][0]);
+                var i = 1;
+                timer = window.setInterval(function () {
+                    if (i > len - 1) {
+                        i = 0;
+                    }
+                    BeginChange(258, 250, 5, datas[n][i]);
+                    i++;
+                }, 5000);
+                if (datas[n].length == 1) {
+                    clearInterval(timer);
+                }
+                return timer;
+            }
+            $(function () {
+                var n = 1;
+                // qiehuan(0);
+                if (currentTimer != null) {
+                    // 当切换导航时停止当前轮播
+                    clearInterval(currentTimer);
+                }
+                currentTimer = qiehuan(0);
+            });
+            $(".cb-navbar ul li").click(function () {
+                var index = $(this).index();
+                var n = index;
+                $('#b' + n + '').addClass('cb-nav-cur').siblings().removeClass('cb-nav-cur');
+                if (currentTimer != null) {
+                    // 当切换导航时停止当前轮播
+                    clearInterval(currentTimer);
+                }
+                currentTimer = qiehuan(n);
+            });
+        </script>
+        <!--亮点荟萃-->
+        <div class="cb-ld-container">
+            <!--标题-->
+            <div class="cb-title cb-pol">
+                <div class="cb-title-l"></div>
+                <div class="cb-title-c">
+                    <img class="cb-title-icon" src="images/cb-title-icon02.png" width="35" height="35" alt="">
+                    <span>成都传媒集团新媒体亮点荟萃</span>
+                </div>
+                <div class="cb-title-r"></div>
+            </div>
+            <div class="ld-main-lf">
+                <div class="ld-nav-lf">
+                </div>
+            </div>
+            <div class="ld-main-rt">
+                <!--文章传播力排行榜-->
+                <div class="ld-wz-bk lf">
+                    <div class="ld-wz-top">
+                        <span class="ld-ls-bj1"></span>
+                        <span class="ld-ls-bj2"></span>
+                        <span class="ld-ls-bj3"></span>
+                        <span class="ld-ls-bj4"></span>
+
+                        <div class="ld-wz-con">
+                            <div class="wz-cb-tit clearfix">
+                                <h2>文章传播力排行榜</h2>
+                            </div>
+                            <div class="ld-wz-ls">
+                                <div class="ld-ls-tit">
+                                    <p style="width: 87px;">排名</p>
+
+                                    <p style="width: 380px;">标题</p>
+
+                                    <p style="width: 190px;">来源</p>
+
+                                    <p style="width: 110px;">传播力值</p>
+                                </div>
+                                <div class="scroll">
+                                    <ul class="ld-wz-ul">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="ld-load-more ld_more">
+                        加载更多<img src="images/cb-ld-bac13.png">
+                    </a>
+                </div>
+                <!--end 文章传播力排行榜-->
+                <!--最新文章传播情况-->
+                <div class="ld-wz-bk rt">
+                    <div class="ld-wz-top">
+                        <span class="ld-ls-bj1"></span>
+                        <span class="ld-ls-bj2"></span>
+                        <span class="ld-ls-bj3"></span>
+                        <span class="ld-ls-bj4"></span>
+
+                        <div class="ld-wz-con">
+                            <div class="zx-wz-tit clearfix">
+                                <h2>最新文章传播情况</h2>
+                            </div>
+                            <div class="ld-wz-ls">
+                                <div class="ld-ls-tit">
+                                    <p style="width: 440px;text-align: left;padding-left: 20px;">标题</p>
+
+                                    <p style="width: 195px;">来源</p>
+
+                                    <p style="width: 110px;">传播力值</p>
+                                </div>
+                                <div class="scroll">
+                                    <ul class="rw-wz-ul">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="ld-load-more qk_more">
+                        加载更多<img src="images/cb-ld-bac13.png">
+                    </a>
+                </div>
+                <!--end 最新文章传播情况-->
+            </div>
+            <div class="cb-footer-lf"></div>
+            <div class="cb-footer-rt"></div>
+        </div>
+        <script>
+            $(".scroll").mCustomScrollbar({
+                scrollButtons: {
+                    enable: false
+                },
+            });
+        </script>
+    </div>
+</body>
+</html>
