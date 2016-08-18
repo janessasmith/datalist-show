@@ -1,5 +1,5 @@
 /**
- * Created by zhenglu on 2016/7/17.
+ * Created by zhenglu on 2016/7/19.
  */
 $(function () {
     var ld_index = 1;
@@ -21,96 +21,42 @@ $(function () {
         getIntensity(1, PRODUCTTYPE, ZB_SOURCE_SITE, ld_time);
     });
     //菜单服务调用
-    function getMTree() {
-        var data = data1;
-        for (var i = 0; i < data.length; i++) {
-            var createobj_i = $(
-                '<div class="ld-nav-fr" id="menu' + i + '"><a href="javascript:;">' + data[i].roleName + '</a></div>'
-            );
-            $(".ld-nav-lf").append(createobj_i);
-            // var html="";
-            // html = getMenuHtml(data[i].children);
-            // var createobj_j = $(
-            //  '<div class="ld-nav-rt menu'+i+'" style="display: none;">'+
-            //      html+
-            //  '</div>'
-            // );
-            // $(".ld-main-lf").append(createobj_j);
-        }
-        $('#menu0').addClass('nav-fr-cur');
-        $('.menu0').show();
-        //一级菜单点击事件
-        $('.ld-nav-fr').click(function () {
-            $(this).addClass('nav-fr-cur').siblings().removeClass('nav-fr-cur');
-            $('.ld-nav-rt').hide();
-            var showClass = $(this).attr('id');
-            $('.' + showClass + '').show();
-            $('.nav-th-bk').hide();
-            $('.ld-nav-se').removeClass('nav-se-cur');
-        });
-        //二级菜单点击事件
-        $('.ld-nav-se').click(function () {
-            if (!$(this).hasClass('nav-se-cur')) {
-                $('.nav-th-bk').slideUp(1000);
-                $(this).children('.nav-th-bk').slideDown(1000);
-                $(this).addClass('nav-se-cur').siblings().removeClass('nav-se-cur');
-                PRODUCTTYPE = $(this).children('label').html();
-                if (!$(this).children('.nav-th-bk').children().hasClass('ld-nav-th')) {
-                    ZB_SOURCE_SITE = PRODUCTTYPE;
-                    ld_index = 1;
-                    qk_index = 1;
-                    $('.ab-sel-bac').html("时间范围");
-                    ld_time = "7";
-                    $('.rw-wz-ul li').remove();
-                    getSituation(1, PRODUCTTYPE, ZB_SOURCE_SITE, '1');
-                    $('.ld-wz-ul li').remove();
-                    getIntensity(1, PRODUCTTYPE, ZB_SOURCE_SITE, "7");
-                }
+    $.ajax({
+        type: "get",
+        dataType: "json",
+        url: "data/navigationtree.json",
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var createobj_i = $(
+                    '<div class="ld-nav-fr" id="menu' + i + '"><a href="javascript:;">' + data[i].roleName + '</a></div>'
+                );
+                $('.ld-nav-lf').append(createobj_i);
             }
-        });
-        //三级菜单点击事件
-        $('.ld-nav-th').click(function () {
-            $(this).addClass('no-bac').siblings().removeClass('no-bac');
-            ZB_SOURCE_SITE = $(this).html();
-            ld_index = 1;
-            qk_index = 1;
-            $('.ab-sel-bac').html("时间范围");
-            ld_time = "7";
-            $('.rw-wz-ul li').remove();
-            getSituation(1, PRODUCTTYPE, ZB_SOURCE_SITE, '1');
-            $('.ld-wz-ul li').remove();
-            getIntensity(1, PRODUCTTYPE, ZB_SOURCE_SITE, "7");
-        });
-    }
+            $('#menu0').addClass('nav-fr-cur');
+            //一级菜单点击事件
+            $('.ld-nav-fr').click(function () {
+                $(this).addClass('nav-fr-cur').siblings().removeClass('nav-fr-cur');
+                $('.ld-nav-rt').hide();
+                var showClass = $(this).attr('id');
+                $('.' + showClass + '').show();
+                $('.nav-th-bk').hide();
+                $('.ld-nav-se').removeClass('nav-se-cur');
+            });
 
-    getMTree();
-    getSituation(1, "", "", '1');
-    getIntensity(1, "", "", "7");
+            $('.ld-nav-fr').click(function () {
+                $(this).addClass('nav-fr-cur').siblings().removeClass('nav-fr-cur');
+            });
+        },
+        error: function (msg) {
+            console.log(msg);
+        }
+
+    });
+    getSituation("", '1');
+    getIntensity("");
+
 })
-//菜单HTML返回
-// function getMenuHtml(data){
-//  var menuHtmlx ="";
-//  if(data.length>0){
-//      for(var i = 0 ; i<data.length;i++){
-//          var mhtmlx = "";
-//          if(data[i].children.length>0){
-//              for(var j = 0 ; j<data[i].children.length;j++){
-//                  var mhtml = '<a href="javascript:;" class="ld-nav-th">'+ data[i].children[j].roleName+'</a>';
-//                  mhtmlx += mhtml;
-//              }
-//          }
-//          var menuHtml = '<div class="ld-nav-se">'+
-//                              '<label>'+data[i].roleName+'</label>'+
-//                              '<div class="nav-th-bk" style="display: none;">'+
-//                                  mhtmlx+
-//                              '</div>'+
-//                          '</div>';
-//          menuHtmlx += menuHtml;
-//      }
-//  }
 
-//  return menuHtmlx;
-// }
 //文章传播情况
 function getSituation(pageIndex, PRODUCTTYPE, ZB_SOURCE_SITE, pageClass) {
     var dataset = data3;
@@ -195,27 +141,27 @@ $(document).on("click", ".ld-nav-fr", function (event) {
 });
 
 // 左侧导航json数据
-var data1 = [{
-    "roleName": "成都日报锦观集群",
-    "pid": 0,
-    "roleId": 1
-}, {
-    "roleName": "成都商报新媒体集群",
-    "pid": 1,
-    "roleId": 1
-}, {
-    "roleName": "成都晚报公益集群",
-    "pid": 2,
-    "roleId": 1
-}, {
-    "roleName": "全搜索全媒体集群",
-    "pid": 2,
-    "roleId": 1
-}, {
-    "roleName": "每经新媒体集群",
-    "pid": 2,
-    "roleId": 1
-}];
+/*var data1 = [{
+ "roleName": "成都日报锦观集群",
+ "pid": 0,
+ "roleId": 1
+ }, {
+ "roleName": "成都商报新媒体集群",
+ "pid": 1,
+ "roleId": 1
+ }, {
+ "roleName": "成都晚报公益集群",
+ "pid": 2,
+ "roleId": 1
+ }, {
+ "roleName": "全搜索全媒体集群",
+ "pid": 2,
+ "roleId": 1
+ }, {
+ "roleName": "每经新媒体集群",
+ "pid": 2,
+ "roleId": 1
+ }];*/
 
 // 成都日报锦观集群-文章传播力排行榜json数据
 // var data2 = {

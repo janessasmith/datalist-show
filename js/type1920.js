@@ -1,7 +1,7 @@
 /**
  * Created by zhenglu on 2016/7/17.
  */
-$(function() {
+$(function () {
     var containerWidth = 1920;
     var containerHeight = 1080;
     var scaleAndLocation = getScaleAndLocation(containerWidth, containerHeight);
@@ -11,11 +11,11 @@ $(function() {
         var scale = 1;
         // 缩放后居中的位置,
         var location = {
-                x: 0,
-                y: 0
-            }
-            // var clientWidth = document.body.clientWidth;
-            // var clientHeight = document.body.clientHeight;
+            x: 0,
+            y: 0
+        }
+        // var clientWidth = document.body.clientWidth;
+        // var clientHeight = document.body.clientHeight;
         var clientWidth = window.innerWidth;
         var clientHeight = window.innerHeight;
         if (clientWidth / clientHeight < width / height) {
@@ -30,6 +30,7 @@ $(function() {
             location: location
         };
     }
+
     if (scaleAndLocation.scale != 1) {
         $("body").css("overflow", "hidden");
         $("#cb-container").css({

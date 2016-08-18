@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
     //标题和链接
     //var TitleHrefList = document.getElementById('sourcedata').innerHTML;
     //var arrTitleHref = eval(TitleHrefList);
@@ -11,221 +11,221 @@
     ];
     var arrColor = eval(ColorList);
 
-    window.BeginChange = function(width, height, spacing, arrTitleHref) {
-            var left_width = width + spacing;
-            var top_height = height + spacing;
-            //重新赋值 一屏显示20条
-            //AreaPosition = [[0, 0], [0, top_height], [left_width, 0], [left_width, top_height], [left_width*2, 0], [left_width*2, top_height], [left_width*3, 0], [left_width*3, top_height], [left_width*4, 0], [left_width*4, top_height], [left_width*5, 0], [left_width*5, top_height],
-            //               [left_width*6, 0], [left_width*6, top_height], [left_width*7, 0], [left_width*7, top_height], [0, top_height*2], [0, top_height*3], [left_width, top_height*2], [left_width, top_height*3], [left_width*2, top_height*2], [left_width*2, top_height*3], [left_width*3, top_height*2],
-            //               [left_width*3, top_height*3], [left_width*4, top_height*2], [left_width*4, top_height*3], [left_width*5, top_height*2], [left_width*5, top_height*3], [left_width*6, top_height*2], [left_width*6, top_height*3], [left_width*7, top_height*2], [left_width*7, top_height*3]];
+    window.BeginChange = function (width, height, spacing, arrTitleHref) {
+        var left_width = width + spacing;
+        var top_height = height + spacing;
+        //重新赋值 一屏显示20条
+        //AreaPosition = [[0, 0], [0, top_height], [left_width, 0], [left_width, top_height], [left_width*2, 0], [left_width*2, top_height], [left_width*3, 0], [left_width*3, top_height], [left_width*4, 0], [left_width*4, top_height], [left_width*5, 0], [left_width*5, top_height],
+        //               [left_width*6, 0], [left_width*6, top_height], [left_width*7, 0], [left_width*7, top_height], [0, top_height*2], [0, top_height*3], [left_width, top_height*2], [left_width, top_height*3], [left_width*2, top_height*2], [left_width*2, top_height*3], [left_width*3, top_height*2],
+        //               [left_width*3, top_height*3], [left_width*4, top_height*2], [left_width*4, top_height*3], [left_width*5, top_height*2], [left_width*5, top_height*3], [left_width*6, top_height*2], [left_width*6, top_height*3], [left_width*7, top_height*2], [left_width*7, top_height*3]];
 
-            // 一屏显示15条
-            AreaPosition = [
-                [0, 0],
-                [0, top_height],
-                [left_width, 0],
-                [left_width, top_height],
-                [left_width * 2, 0],
-                [left_width * 2, top_height],
-                [left_width * 3, 0],
-                [left_width * 3, top_height],
-                [left_width * 4, 0],
-                [left_width * 4, top_height],
-                [left_width * 5, 0],
-                [left_width * 5, top_height],
-                [left_width * 6, 0],
-                [left_width * 6, top_height],
-                [0, top_height * 2],
-                [left_width, top_height * 2],
-                [left_width * 2, top_height * 2],
-                [left_width * 3, top_height * 2],
-                [left_width * 4, top_height * 2],
-                [left_width * 5, top_height * 2],
-                [left_width * 6, top_height * 2]
-            ];
+        // 一屏显示15条
+        AreaPosition = [
+            [0, 0],
+            [0, top_height],
+            [left_width, 0],
+            [left_width, top_height],
+            [left_width * 2, 0],
+            [left_width * 2, top_height],
+            [left_width * 3, 0],
+            [left_width * 3, top_height],
+            [left_width * 4, 0],
+            [left_width * 4, top_height],
+            [left_width * 5, 0],
+            [left_width * 5, top_height],
+            [left_width * 6, 0],
+            [left_width * 6, top_height],
+            [0, top_height * 2],
+            [left_width, top_height * 2],
+            [left_width * 2, top_height * 2],
+            [left_width * 3, top_height * 2],
+            [left_width * 4, top_height * 2],
+            [left_width * 5, top_height * 2],
+            [left_width * 6, top_height * 2]
+        ];
 
 
-            arrAreaPosition = eval(AreaPosition);
-            divshift = [
-                [-500, -200],
-                [500, 200],
-                [130, 130],
-                [-30, -30],
-                [161, 0],
-                [-161, 0],
-                [644, 117],
-                [161, 0],
-                [483, 234],
-                [1100, 350],
-                [-232, -55],
-                [-1100, -350],
-                [-322, -17],
-                [20, 20],
-                [10, 10],
-                [305, 111],
-                [-222, -789],
-                [-10, -10],
-                [70, 50],
-                [100, 130]
-            ];
-            arrDivShift = eval(divshift);
-            arrNewArea = new Array(); //新的数组排列
-            arrAreaPosition = arrAreaPosition.sort(function() {
-                return Math.random() > 0.5 ? -1 : 1;
-            }); //数组对象随机排序
+        arrAreaPosition = eval(AreaPosition);
+        divshift = [
+            [-500, -200],
+            [500, 200],
+            [130, 130],
+            [-30, -30],
+            [161, 0],
+            [-161, 0],
+            [644, 117],
+            [161, 0],
+            [483, 234],
+            [1100, 350],
+            [-232, -55],
+            [-1100, -350],
+            [-322, -17],
+            [20, 20],
+            [10, 10],
+            [305, 111],
+            [-222, -789],
+            [-10, -10],
+            [70, 50],
+            [100, 130]
+        ];
+        arrDivShift = eval(divshift);
+        arrNewArea = new Array(); //新的数组排列
+        arrAreaPosition = arrAreaPosition.sort(function () {
+            return Math.random() > 0.5 ? -1 : 1;
+        }); //数组对象随机排序
 
-            //var xx = 2;     //2个最大区域
-            //var xw = 2;     //2个长区域
-            //var xh = 4;     //4个高区域
-            //var x = 12;     //12个小区域
+        //var xx = 2;     //2个最大区域
+        //var xw = 2;     //2个长区域
+        //var xh = 4;     //4个高区域
+        //var x = 12;     //12个小区域
 
-            var xx = 1; //2个最大区域
-            var xw = 2; //2个长区域
-            var xh = 1; //4个高区域
-            var x = 11; //12个小区域
-            var left = 0; //css left
-            var top = 0; //css top
+        var xx = 1; //2个最大区域
+        var xw = 2; //2个长区域
+        var xh = 1; //4个高区域
+        var x = 11; //12个小区域
+        var left = 0; //css left
+        var top = 0; //css top
 
-            //获取大区域的坐标
-            for (var i1 = 0; i1 < arrAreaPosition.length; i1++) {
-                left = arrAreaPosition[i1][0];
-                top = arrAreaPosition[i1][1];
-                //if (xx > 0 & left % (left_width*2) == 0 & top % (top_height*2) == 0) {
-                //    arrNewArea.push(arrAreaPosition[i1]);
-                //    DeleteArea(left, top);
-                //    DeleteArea(left, top + top_height);
-                //    DeleteArea(left + left_width, top);
-                //    DeleteArea(left + left_width, top + top_height);
-                //    xx--;
-                //    i1--;
-                //}
-
-                if (xx > 0 & left % (left_width * 2) == 0 & left / left_width < 6 & top / top_height < 2) {
-                    arrNewArea.push(arrAreaPosition[i1]);
-                    DeleteArea(left, top);
-                    DeleteArea(left, top + top_height);
-                    DeleteArea(left + left_width, top);
-                    DeleteArea(left + left_width, top + top_height);
-                    xx--;
-                    i1--;
-                }
-            }
-
-            //获取两个长区域的坐标
-            for (var i2 = 0; i2 < arrAreaPosition.length; i2++) {
-                left = arrAreaPosition[i2][0];
-                top = arrAreaPosition[i2][1];
-                //if (xw > 0 & left % (left_width*2) == 0 & top % top_height == 0) {
-                //    if (top / top_height == 0 | top / top_height == 2) {
-                //        arrNewArea.push(arrAreaPosition[i2]);
-                //        DeleteArea(left, top);
-                //        DeleteArea(left + left_width, top);
-                //        AddArea(left, top + top_height);
-                //        DeleteArea(left, top + top_height);
-                //        AddArea(left + left_width, top + top_height);
-                //        DeleteArea(left + left_width, top + top_height);
-                //    }
-                //    else if (top / top_height == 1 | top / top_height == 3) {
-                //        arrNewArea.push(arrAreaPosition[i2]);
-                //        DeleteArea(left, top);
-                //        DeleteArea(left + left_width, top);
-                //        AddArea(left, top - top_height);
-                //        DeleteArea(left, top - top_height);
-                //        AddArea(left + left_width, top - top_height);
-                //        DeleteArea(left + left_width, top - top_height);
-                //    }
-                //    xw--;
-                //    i2--;
-                //}
-
-                if (xw > 0 & left / left_width < 6 & top % top_height == 0) {
-                    if (isExit(left, top) & isExit(left + left_width, top)) {
-                        arrNewArea.push(arrAreaPosition[i2]);
-                        DeleteArea(left, top);
-                        DeleteArea(left + left_width, top);
-                        xw--;
-                        i2--;
-                    }
-
-                }
-            }
-
-            //获取四个高区域的坐标
-            //for (var i3 = 0; i3 < arrAreaPosition.length; i3++) {
-            //    left = arrAreaPosition[i3][0];
-            //    top = arrAreaPosition[i3][1];
-            //    if (xh > 0 & left % left_width == 0 & top % (top_height*2) == 0) {
-            //        if (xh == 4) {
-            //            arrNewArea.push(arrAreaPosition[i3]);
-            //            DeleteArea(left, top);
-            //            DeleteArea(left, top + top_height);
-            //            xh--;
-            //            if (left / left_width % 2 == 0) {
-            //                AddArea(left + left_width, top);
-            //                DeleteArea(left + left_width, top);
-            //                DeleteArea(left + left_width, top + top_height);
-            //            }
-            //            else {
-            //                AddArea(left - left_width, top);
-            //                DeleteArea(left - left_width, top);
-            //                DeleteArea(left - left_width, top + top_height);
-            //            }
-            //        }
-            //        else if (xh == 3) {
-            //            arrNewArea.push(arrAreaPosition[i3]);
-            //            DeleteArea(left, top);
-            //            DeleteArea(left, top + top_height);
-            //        }
-            //        else {
-            //            if (left / left_width % 2 == 0) {
-            //                arrNewArea.push(arrAreaPosition[i3]);
-            //                DeleteArea(left, top);
-            //                DeleteArea(left, top + top_height);
-            //                AddArea(left + left_width, top);
-            //                DeleteArea(left + left_width, top);
-            //                AddArea(left + left_width, top + top_height);
-            //                DeleteArea(left + left_width, top + top_height);
-            //            }
-            //            else {
-            //                arrNewArea.push(arrAreaPosition[i3]);
-            //                DeleteArea(left, top);
-            //                DeleteArea(left, top + top_height);
-            //                AddArea(left - left_width, top);
-            //                DeleteArea(left - left_width, top);
-            //                AddArea(left - left_width, top + top_height);
-            //                DeleteArea(left - left_width, top + top_height);
-            //            }
-            //        }
-            //        xh--;
-            //        i3--;
-            //    }
+        //获取大区域的坐标
+        for (var i1 = 0; i1 < arrAreaPosition.length; i1++) {
+            left = arrAreaPosition[i1][0];
+            top = arrAreaPosition[i1][1];
+            //if (xx > 0 & left % (left_width*2) == 0 & top % (top_height*2) == 0) {
+            //    arrNewArea.push(arrAreaPosition[i1]);
+            //    DeleteArea(left, top);
+            //    DeleteArea(left, top + top_height);
+            //    DeleteArea(left + left_width, top);
+            //    DeleteArea(left + left_width, top + top_height);
+            //    xx--;
+            //    i1--;
             //}
 
+            if (xx > 0 & left % (left_width * 2) == 0 & left / left_width < 6 & top / top_height < 2) {
+                arrNewArea.push(arrAreaPosition[i1]);
+                DeleteArea(left, top);
+                DeleteArea(left, top + top_height);
+                DeleteArea(left + left_width, top);
+                DeleteArea(left + left_width, top + top_height);
+                xx--;
+                i1--;
+            }
+        }
 
-            //获取一个个高区域的坐标
-            for (var i3 = 0; i3 < arrAreaPosition.length; i3++) {
-                left = arrAreaPosition[i3][0];
-                top = arrAreaPosition[i3][1];
-                if (xh > 0 & left % left_width == 0 & top / top_height < 2) {
-                    if (isExit(left, top) & isExit(left, top + top_height)) {
-                        arrNewArea.push(arrAreaPosition[i3]);
-                        DeleteArea(left, top);
-                        DeleteArea(left, top + top_height);
-                        xh--;
-                        i3--;
-                    }
+        //获取两个长区域的坐标
+        for (var i2 = 0; i2 < arrAreaPosition.length; i2++) {
+            left = arrAreaPosition[i2][0];
+            top = arrAreaPosition[i2][1];
+            //if (xw > 0 & left % (left_width*2) == 0 & top % top_height == 0) {
+            //    if (top / top_height == 0 | top / top_height == 2) {
+            //        arrNewArea.push(arrAreaPosition[i2]);
+            //        DeleteArea(left, top);
+            //        DeleteArea(left + left_width, top);
+            //        AddArea(left, top + top_height);
+            //        DeleteArea(left, top + top_height);
+            //        AddArea(left + left_width, top + top_height);
+            //        DeleteArea(left + left_width, top + top_height);
+            //    }
+            //    else if (top / top_height == 1 | top / top_height == 3) {
+            //        arrNewArea.push(arrAreaPosition[i2]);
+            //        DeleteArea(left, top);
+            //        DeleteArea(left + left_width, top);
+            //        AddArea(left, top - top_height);
+            //        DeleteArea(left, top - top_height);
+            //        AddArea(left + left_width, top - top_height);
+            //        DeleteArea(left + left_width, top - top_height);
+            //    }
+            //    xw--;
+            //    i2--;
+            //}
+
+            if (xw > 0 & left / left_width < 6 & top % top_height == 0) {
+                if (isExit(left, top) & isExit(left + left_width, top)) {
+                    arrNewArea.push(arrAreaPosition[i2]);
+                    DeleteArea(left, top);
+                    DeleteArea(left + left_width, top);
+                    xw--;
+                    i2--;
+                }
+
+            }
+        }
+
+        //获取四个高区域的坐标
+        //for (var i3 = 0; i3 < arrAreaPosition.length; i3++) {
+        //    left = arrAreaPosition[i3][0];
+        //    top = arrAreaPosition[i3][1];
+        //    if (xh > 0 & left % left_width == 0 & top % (top_height*2) == 0) {
+        //        if (xh == 4) {
+        //            arrNewArea.push(arrAreaPosition[i3]);
+        //            DeleteArea(left, top);
+        //            DeleteArea(left, top + top_height);
+        //            xh--;
+        //            if (left / left_width % 2 == 0) {
+        //                AddArea(left + left_width, top);
+        //                DeleteArea(left + left_width, top);
+        //                DeleteArea(left + left_width, top + top_height);
+        //            }
+        //            else {
+        //                AddArea(left - left_width, top);
+        //                DeleteArea(left - left_width, top);
+        //                DeleteArea(left - left_width, top + top_height);
+        //            }
+        //        }
+        //        else if (xh == 3) {
+        //            arrNewArea.push(arrAreaPosition[i3]);
+        //            DeleteArea(left, top);
+        //            DeleteArea(left, top + top_height);
+        //        }
+        //        else {
+        //            if (left / left_width % 2 == 0) {
+        //                arrNewArea.push(arrAreaPosition[i3]);
+        //                DeleteArea(left, top);
+        //                DeleteArea(left, top + top_height);
+        //                AddArea(left + left_width, top);
+        //                DeleteArea(left + left_width, top);
+        //                AddArea(left + left_width, top + top_height);
+        //                DeleteArea(left + left_width, top + top_height);
+        //            }
+        //            else {
+        //                arrNewArea.push(arrAreaPosition[i3]);
+        //                DeleteArea(left, top);
+        //                DeleteArea(left, top + top_height);
+        //                AddArea(left - left_width, top);
+        //                DeleteArea(left - left_width, top);
+        //                AddArea(left - left_width, top + top_height);
+        //                DeleteArea(left - left_width, top + top_height);
+        //            }
+        //        }
+        //        xh--;
+        //        i3--;
+        //    }
+        //}
+
+
+        //获取一个个高区域的坐标
+        for (var i3 = 0; i3 < arrAreaPosition.length; i3++) {
+            left = arrAreaPosition[i3][0];
+            top = arrAreaPosition[i3][1];
+            if (xh > 0 & left % left_width == 0 & top / top_height < 2) {
+                if (isExit(left, top) & isExit(left, top + top_height)) {
+                    arrNewArea.push(arrAreaPosition[i3]);
+                    DeleteArea(left, top);
+                    DeleteArea(left, top + top_height);
+                    xh--;
+                    i3--;
                 }
             }
-
-            //剩下四个小区域
-            for (var i4 = 0; i4 < arrAreaPosition.length; i4++) {
-                arrNewArea.push(arrAreaPosition[i4]);
-            }
-
-            DrawArea(arrNewArea, width, height, spacing, arrTitleHref);
-            RightAreaHtml();
         }
-        //数组中删除指定坐标的区域
+
+        //剩下四个小区域
+        for (var i4 = 0; i4 < arrAreaPosition.length; i4++) {
+            arrNewArea.push(arrAreaPosition[i4]);
+        }
+
+        DrawArea(arrNewArea, width, height, spacing, arrTitleHref);
+        RightAreaHtml();
+    }
+    //数组中删除指定坐标的区域
     function DeleteArea(left, top) {
         for (var i = 0; i < arrAreaPosition.length; i++) {
             if (left == arrAreaPosition[i][0] & top == arrAreaPosition[i][1]) {
@@ -234,6 +234,7 @@
             }
         }
     }
+
     //数组中添加指定坐标的区域
     function AddArea(left, top) {
         for (var i = 0; i < arrAreaPosition.length; i++) {
@@ -262,13 +263,13 @@
         var href;
         var color;
         var strHtml = "";
-        arrTitleHref = arrTitleHref.sort(function() {
+        arrTitleHref = arrTitleHref.sort(function () {
             return Math.random() > 0.5 ? -1 : 1;
         }); //数组对象随机排序
-        arrColor = arrColor.sort(function() {
+        arrColor = arrColor.sort(function () {
             return Math.random() > 0.5 ? -1 : 1;
         }); //数组对象随机排序
-        arrDivShift = arrDivShift.sort(function() {
+        arrDivShift = arrDivShift.sort(function () {
             return Math.random() > 0.5 ? -1 : 1;
         }); //数组对象随机排序
         console.log("arrNewArea.length:" + arrNewArea.length);
